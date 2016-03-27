@@ -1,0 +1,143 @@
+body{
+  background: url(../images/bg2.png);
+  background-repeat:no-repeat;
+  color: #FFF;
+}
+
+.statusBox{
+  margin-left: 130px;
+  margin-top: 150px;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+.light {
+  height: 0px;
+  width: 10px;
+  border: 10px solid hsl(0, 70%, 56%);
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 6px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
+}
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  animation:fadeIn ease-in 1;   /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  animation-fill-mode:forwards;   /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  animation-duration:1s;
+}
+
+.fade-in.one {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.fade-in.two {
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay:1.2s;
+  animation-delay: 1.2s;
+}
+
+.fade-in.three {
+  -webkit-animation-delay: 1.6s;
+  -moz-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}
+
+/*---make a basic box ---*/
+.box{
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 10px;
+  float: left;
+  background: rgba(0, 0, 0, 0.5);
+
+}
+
+.profileBox {
+  margin-left: 130px;
+  margin-top: 60px;
+  height: 200px;
+  width: 400px;
+  background-color:rgba(0, 0, 0, 0.5);
+  -webkit-animation:fadeIn ease-in 1;
+   animation:fadeIn ease-in 1;
+}
+
+.resultBox {
+  border-radius: 4px;
+  margin-left: 130px;
+  margin-top: 20px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.remove{
+  display: none;
+}
+
+.remove:hover{
+  color: rgb(214, 46, 41);
+}
+
+.remove:hover .tableContent{
+  color: rgb(77, 174, 193)!important;
+}
+
+.plus{
+  display: none;
+}
+
+.plus:hover{
+  color: rgb(45, 170, 14);
+}
+
+.tableContent:hover{
+  background-color: rgba(0, 0, 0, 0.6)!important;
+  cursor: pointer;
+}
+
+.tableContent:hover .remove{
+  display: block;
+}
+
+tr:hover .plus{
+  display: block;
+}
+
+
+table{
+  border: 0px!important;
+}
+
+tr{
+  border: 0px!important;
+}
+
+td{
+  border: 0px!important;
+}
+
+.formInput {
+  border: 0px;
+  width: 80px;
+  background: transparent;
+}
+
+.formInput:focus{
+  outline: none;
+}

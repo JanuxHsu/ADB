@@ -1,0 +1,52 @@
+<!-- HTML generated using hilite.me --><div style="background: rgba(0,0,0,0.7); border-radius:4px; overflow:auto;width:auto; padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%; color:#999"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #fb660a; font-weight: bold">var</span> <span style="color: #ffffff">Promise</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">require(</span><span style="color: #0086d2">&#39;promise&#39;</span><span style="color: #ffffff">);</span>
+<span style="color: #fb660a; font-weight: bold">var</span> <span style="color: #ffffff">ibmdb</span> <span style="color: #ffffff">=</span> <span style="color: #ffffff">require(</span><span style="color: #0086d2">&#39;ibm_db&#39;</span><span style="color: #ffffff">);</span>
+
+<span style="color: #fb660a; font-weight: bold">var</span> <span style="color: #ffffff">connectionString</span> <span style="color: #ffffff">=</span>  <span style="color: #0086d2">&#39;DRIVER={DB2};DATABASE=mydb;&#39;</span><span style="color: #ffffff">;</span>
+    <span style="color: #ffffff">connectionString</span> <span style="color: #ffffff">+=</span> <span style="color: #0086d2">&#39;UID=Username;PWD=Password;&#39;</span><span style="color: #ffffff">;</span>
+    <span style="color: #ffffff">connectionString</span> <span style="color: #ffffff">+=</span> <span style="color: #0086d2">&#39;HOSTNAME=host;port=50001;&#39;</span><span style="color: #ffffff">;</span>
+
+<span style="color: #fb660a; font-weight: bold">var</span> <span style="color: #ffffff">openDB</span> <span style="color: #ffffff">=</span> <span style="color: #fb660a; font-weight: bold">new</span> <span style="color: #ffffff">Promise(</span><span style="color: #fb660a; font-weight: bold">function</span><span style="color: #ffffff">(resolve,</span> <span style="color: #ffffff">reject){</span>
+  <span style="color: #ffffff">ibmdb.open(connectionString,</span> <span style="color: #fb660a; font-weight: bold">function</span><span style="color: #ffffff">(err,</span> <span style="color: #ffffff">conn){</span>
+    <span style="color: #fb660a; font-weight: bold">if</span> <span style="color: #ffffff">(err)</span> <span style="color: #ffffff">{</span>
+      <span style="color: #ffffff">reject(err);</span>
+    <span style="color: #ffffff">}</span> <span style="color: #fb660a; font-weight: bold">else</span> <span style="color: #ffffff">{</span>
+      <span style="color: #ffffff">resolve(conn);</span>
+    <span style="color: #ffffff">}</span>
+  <span style="color: #ffffff">});</span>
+<span style="color: #ffffff">});</span>
+
+<span style="color: #ffffff">openDB.then(</span><span style="color: #fb660a; font-weight: bold">function</span><span style="color: #ffffff">(dbInstance){</span>
+    <span style="color: #ffffff">console.log(</span><span style="color: #0086d2">&#39;DB2 Connected!&#39;</span><span style="color: #ffffff">);</span>
+    <span style="color: #ffffff">console.log(dbInstance);</span>
+    <span style="color: #ffffff">dbInstance.close(</span><span style="color: #fb660a; font-weight: bold">function</span> <span style="color: #ffffff">()</span> <span style="color: #ffffff">{</span>
+      <span style="color: #ffffff">console.log(</span><span style="color: #0086d2">&#39;db closed&#39;</span><span style="color: #ffffff">);</span>
+    <span style="color: #ffffff">});</span>
+<span style="color: #ffffff">},</span> <span style="color: #fb660a; font-weight: bold">function</span><span style="color: #ffffff">(err){</span>
+  <span style="color: #ffffff">console.log(err);</span>
+<span style="color: #ffffff">});</span>
+</pre></td></tr></table></div>

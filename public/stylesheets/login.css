@@ -1,0 +1,127 @@
+body{
+  background: url(../images/bg.png);
+  background-repeat:no-repeat;
+  color: #FFF;
+  overflow: hidden;
+}
+
+.loginPanel {
+  width: 250px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  top: 120px;
+  text-align: right;
+}
+
+
+.loginPanel > p {
+  margin-top: 40px;
+  display: flex;
+  font-size: 20px;
+}
+
+label{
+  flex: 1;
+  padding-right: 20px;
+}
+
+label > span {
+  margin-top: 8px;
+  margin-top: 3px!important;
+}
+
+input{
+  flex: 4;
+  border-bottom: 1px solid #FFF!important;
+}
+
+.item{
+  width: 100%;
+  border: 0px;
+  background-color: transparent;
+}
+
+input:focus{
+  outline: none;
+}
+
+.login{
+  background: transparent;
+  border: 2px solid #FFF;
+  height: 40px;
+  width: 200px!important;
+  border-radius: 4px;
+  margin-left: 50%;
+  font-weight: bolder;
+}
+
+.login:focus{
+  outline: none;
+}
+
+.login:hover {
+  color:rgb(101, 240, 54);
+  border: 2px solid rgb(101, 240, 54);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
+}
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  animation:fadeIn ease-in 1;   /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  animation-fill-mode:forwards;   /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  animation-duration:1s;
+}
+
+.fade-in.one {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.fade-in.two {
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay:1.2s;
+  animation-delay: 1.2s;
+}
+
+.fade-in.three {
+  -webkit-animation-delay: 1.6s;
+  -moz-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}
+
+.courseBox{
+  height: 30vh;
+  width:600px;
+  position: relative;
+  left: 57%;
+  top: 74vh;
+}
+
+.courseBox > p {
+  font-size: 160px;
+  font-family: Impact, Charcoal, sans-serif;
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.codeBox{
+  width: 600px;
+  height: 500px;
+  margin-left: 560px;
+  margin-top: -100px;
+}
+
+iframe{
+  background: transparent;
+}

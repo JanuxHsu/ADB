@@ -1,0 +1,29 @@
+extends layout
+include ../node_modules/loaders.css/loaders.min.css
+block style
+  link(href='/stylesheets/style.css', rel='stylesheet')
+block content
+  div.statusBox.fade-in.one
+    label Connection Status
+    div.light
+  
+  div.resultBox
+    table(border = '0px').table
+      tr
+        td ID
+        td Name
+        td Student_ID
+      each row in data
+        tr.tableContent
+          td #{row.ID}
+          td #{row.NAME}
+          td #{row.STUDENT_ID}
+          td(style="width:40px;")
+            span(style="margin-top:2px;").remove.glyphicon.glyphicon-remove
+      tr
+        td 
+          span(style="margin-top:2px;").plus.glyphicon.glyphicon-plus
+        td
+          input(type="text").formInput
+        td
+          input(type="text").formInput

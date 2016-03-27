@@ -1,0 +1,29 @@
+extends layout
+include ../node_modules/loaders.css/loaders.min.css
+block style
+  link(href='/stylesheets/login.css', rel='stylesheet')
+block content
+  div.loginPanel
+    p.fadeIn.fade-in.one
+      p 
+    p.fadeIn.fade-in.one
+      label 
+        span.glyphicon.glyphicon-user
+      input(type='text').item.UID
+    p.fadeIn.fade-in.two
+      label 
+        span.glyphicon.glyphicon-lock
+      input(type='password').item.PWD
+    p(style="just").fadeIn.fade-in.three
+      button(style="width:35%").login
+        span.glyphicon.glyphicon-arrow-right Connect
+  
+  div.courseBox
+    p IBM DB2
+    
+  div.codeBox.fadeIn.fade-in.three
+    iframe(src='/code.html' height='100%' width='100%' frameborder="0")
+  
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+  script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
+  script(src="/javascripts/login.js")
