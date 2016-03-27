@@ -125,6 +125,7 @@ input:focus{
 
 iframe{
   background: transparent;
+  overflow: hidden;
 }
 
 .next{
