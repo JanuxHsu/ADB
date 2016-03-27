@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var connect = require('./routes/connect');
+var command = require('./routes/command');
 
 var app = express();
 
@@ -40,27 +41,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/auth', connect);
+app.use('/api/sql', command);
 
 
-app.use('/', routes);
-// app.get('/', function(req, res){
-//   var cookies;
-//   try {
-//     cookies = JSON.parse(req.cookies.auth);
-//   } catch (e) {
-//
-//   }
-//
-//   if (cookies) {
-//     res.render('/', { auth : cookies });
-//   } else {
-//     res.redirect('/login');
-//   }
-// });
-
-app.get('/login', function (req, res) {
+app.get('/', function (req, res) {
   res.render('login');
 });
+
+app.use('/SQL', routes);
+
 
 
 // catch 404 and forward to error handler

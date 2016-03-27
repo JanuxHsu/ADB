@@ -4,26 +4,36 @@ block style
   link(href='/stylesheets/style.css', rel='stylesheet')
 block content
   div.statusBox.fade-in.one
-    label Connection Status
-    div.light
+    label Table
   
-  div.resultBox
+  div.resultBox.fade-in.two
     table(border = '0px').table
       tr
         td ID
         td Name
         td Student_ID
       each row in data
-        tr.tableContent
-          td #{row.ID}
-          td #{row.NAME}
-          td #{row.STUDENT_ID}
+        tr(target_id = '#{row.ID}' target_name = '#{row.NAME}' target_sid = '#{row.STUDENT_ID}' ).tableContent
+          td.r #{row.ID}
+          td.r #{row.NAME}
+          td.r #{row.STUDENT_ID}
           td(style="width:40px;")
-            span(style="margin-top:2px;").remove.glyphicon.glyphicon-remove
+            span(target_id='#{row.ID}' style="margin-top:2px;").remove.glyphicon.glyphicon-remove
       tr
         td 
           span(style="margin-top:2px;").plus.glyphicon.glyphicon-plus
         td
-          input(type="text").formInput
+          input(type="text").formInput.Inname
         td
-          input(type="text").formInput
+          input(type="text").formInput.Insid
+  
+  div.sqlBox.fadeIn.fade-in.three
+    textarea.sql SELECT * FROM student
+    button.Do Send
+    
+    
+    
+    
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+  script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
+  script(src="/javascripts/sql.js")

@@ -118,10 +118,29 @@ input:focus{
 .codeBox{
   width: 600px;
   height: 500px;
-  margin-left: 560px;
+  left: 50%;
+  margin-left: 550px;
   margin-top: -100px;
 }
 
 iframe{
   background: transparent;
+}
+
+.next{
+  background: transparent;
+  border: 2px solid #FFF;
+  height: 40px;
+  width: 100px!important;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+
+.next:focus{
+  outline: none;
+}
+
+.next:hover {
+  color:rgb(101, 240, 54);
+  border: 2px solid rgb(101, 240, 54);
 }

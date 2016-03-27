@@ -145,6 +145,12 @@ var validation = function(account, password){
 
 $( document ).ready(function() {
 
+  $(document).on('click', '.next', function(e){
+    var url = "http://" + window.location.host + '/SQL';
+    console.log(url);
+    location.href = url;
+  });
+
   function goConnect(){
     $.ajax({
       url:'api/auth',
@@ -155,7 +161,11 @@ $( document ).ready(function() {
       },
       dataType : 'JSON',
       success : function(data){
-        $('.codeBox').html('<pre style="border:0px; color:#FFF; background-color:rgba(0,0,0,0.5);" class="prettyprint fadeIn fade-in">' + JSON.stringify(data, null, "\t") + '</pre>');
+        if (data.connected) {
+          $('.codeBox').html('<pre style="border:0px; color:#FFF; background-color:rgba(0,0,0,0.5);" class="prettyprint fadeIn fade-in">' + JSON.stringify(data, null, "\t") + '</pre><button class="next fadeIn fade-in two">NEXT</button>');
+        } else {
+          $('.codeBox').html('<pre style="border:0px; color:#FFF; background-color:rgba(0,0,0,0.5);" class="prettyprint fadeIn fade-in">' + JSON.stringify(data, null, "\t") + '</pre>');
+        }
       },
       error : function(error){
         console.log(error);

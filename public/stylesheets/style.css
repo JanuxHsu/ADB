@@ -2,24 +2,18 @@ body{
   background: url(../images/bg2.png);
   background-repeat:no-repeat;
   color: #FFF;
+  background-size: 100% 100vh;
+  overflow: hidden;
 }
 
 .statusBox{
   margin-left: 130px;
-  margin-top: 150px;
+  margin-top: 170px;
   height: 50px;
   width: 400px;
   display: flex;
   flex-direction: row;
   font-size: 20px;
-}
-.light {
-  height: 0px;
-  width: 10px;
-  border: 10px solid hsl(0, 70%, 56%);
-  border-radius: 50%;
-  margin-left: 5px;
-  margin-top: 6px;
 }
 
 @keyframes fadeIn {
@@ -81,13 +75,14 @@ body{
 .resultBox {
   border-radius: 4px;
   margin-left: 130px;
-  margin-top: 20px;
+  margin-top:-20px;
   width: 300px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .remove{
   display: none;
+  z-index: 1000;
 }
 
 .remove:hover{
@@ -140,4 +135,43 @@ td{
 
 .formInput:focus{
   outline: none;
+}
+
+.sqlBox{
+  margin-left: 500px;
+  margin-top: -340px;
+  width: 500px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.sql{
+  padding:15px;
+  width:500px;
+  height:350px;
+  border:0px;
+  resize: none;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sql:focus{
+  outline: none;
+}
+
+.Do{
+  background: transparent;
+  border: 2px solid #FFF;
+  height: 40px;
+  width: 100px!important;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+.Do:focus{
+  outline: none;
+}
+
+.Do:hover {
+  color:rgb(101, 240, 54);
+  border: 2px solid rgb(101, 240, 54);
 }

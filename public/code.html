@@ -42,7 +42,7 @@
 
 <span style="color: #ffffff">openDB.then(</span><span style="color: #fb660a; font-weight: bold">function</span><span style="color: #ffffff">(dbInstance){</span>
     <span style="color: #ffffff">console.log(</span><span style="color: #0086d2">&#39;DB2 Connected!&#39;</span><span style="color: #ffffff">);</span>
-    <span style="color: #ffffff">console.log(dbInstance);</span>
+    <span style="color: #ffffff">res.json(dbInstance);</span>
     <span style="color: #ffffff">dbInstance.close(</span><span style="color: #fb660a; font-weight: bold">function</span> <span style="color: #ffffff">()</span> <span style="color: #ffffff">{</span>
       <span style="color: #ffffff">console.log(</span><span style="color: #0086d2">&#39;db closed&#39;</span><span style="color: #ffffff">);</span>
     <span style="color: #ffffff">});</span>
